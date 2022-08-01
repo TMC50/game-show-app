@@ -1,22 +1,29 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
-let startButton = document.getElementsByClassName('.btn__reset');
+const startButton = document.querySelector('.btn__reset');
 const missedGuesses = 0;
 
-// Five array strings to be used in the guessing game
+// five array strings to be used in the guessing game
 const phrases = [
     'i love code',
-    'fly an airplane',
+    'learn to fly',
     'the earth is round',
     'candy is life',
     'lasagna is amazing'
 ];
 
-// Listens for the start game button to be selected
+// listens for the start game button to be selected
 startButton.addEventListener('click', () => {
-    
+    startButton.style.display = 'none';
 });
 
-function getRandomPhraseAsArray() {
-    let numbArrayLength = '';
+// return a random phrase from an array 
+function getRandomPhraseAsArray(arr) {
+    // let randomNumber = Math.floor( Math.random() * arr.length ) + 1;
+    let randomNumber = arr.length;
+    let splitPhrase = randomNumber.split();
+    return splitPhrase;
 }
+
+getRandomPhraseAsArray(phrases);
+
