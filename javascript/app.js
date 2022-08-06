@@ -14,7 +14,7 @@ const phrases = [
 
 // listens for the start game button to be selected
 startButton.addEventListener('click', () => {
-    startButton.style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
 });
 
 // return a random phrase from an array 
@@ -44,6 +44,7 @@ addPhraseToDisplay(randomPhrase);
 
 // check if a letter is in the phrase
 function checkLetter(button) {
+    // let allListItems = document.getElementsByClassName('letter');
     let allListItems = document.querySelectorAll('li');
     let match = null;
 
@@ -58,11 +59,11 @@ function checkLetter(button) {
     }
 }
 
-// listen for the onscreen keyboard to be clicked
+// listens for the onscreen keyboard to be clicked
 qwerty.addEventListener('click', (event) => {
     let button = event.target;
 
-    if ( button === true || button.className !== 'chosen') {
+    if ( event.target && event.target.className !== 'chosen') {
         button.classList.add('chosen');
         button = button.disabled;
     }
