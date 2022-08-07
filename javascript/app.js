@@ -45,7 +45,6 @@ addPhraseToDisplay(randomPhrase);
 
 // check if a letter is in the phrase
 function checkLetter(button) {
-    // let allListItems = document.getElementsByClassName('letter');
     let allListItems = document.querySelectorAll('li');
     let match = null;
 
