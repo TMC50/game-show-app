@@ -27,10 +27,11 @@ let randomPhrase = getRandomPhraseAsArray(phrases);
 
 // adds letters of a string to the display
 function addPhraseToDisplay(arr) {
+    const letterAdded = document.querySelector('#phrase ul');
     for ( let i = 0; i < arr.length; i++ ) {
         const listItem = document.createElement('li');   
         listItem.textContent = arr[i];
-        phrase.append(listItem); 
+        letterAdded.append(listItem); 
         
         if (arr[i] !== ' ') {
             listItem.classList.add('letter');
@@ -69,4 +70,4 @@ qwerty.addEventListener('click', (event) => {
     }
 });
 
-let letterFound = checkLetter(button);
+const letterFound = checkLetter(button);
