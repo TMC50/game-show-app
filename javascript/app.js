@@ -3,6 +3,7 @@ const phrase = document.getElementById('phrase');
 const startButton = document.querySelector('.btn__reset');
 const missedGuesses = 0;
 
+
 // five array strings to be used in the guessing game
 const phrases = [
     'i love code',
@@ -48,9 +49,6 @@ function checkLetter(button) {
     let allListItems = document.querySelectorAll('.letter');
     let match = null;
 
-    
-
-
     for ( let i = 0; i < allListItems.length; i++ ) {
         if ( button.textContent === allListItems[i].textContent ) {
             allListItems[i].classList.add('show');
@@ -71,12 +69,20 @@ qwerty.addEventListener('click', (event) => {
         }
 
         const letterFound = checkLetter(button);
-
         
+        if (letterFound === null) {
+            // remove a heart, and increment the missed counter by 1
+            const tries = document.querySelector('.tries');
+            tries.remove();
+            missedGuesses +=1;
 
+        }
 
     }
 
 });
 
+// check if the game has been won or lost
+function checkWin () {
 
+}
