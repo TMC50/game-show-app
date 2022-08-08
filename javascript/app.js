@@ -45,28 +45,38 @@ addPhraseToDisplay(randomPhrase);
 
 // check if a letter is in the phrase
 function checkLetter(button) {
-    let allListItems = document.querySelectorAll('li');
+    let allListItems = document.querySelectorAll('.letter');
     let match = null;
 
-    for ( i = 0; i < allListItems.length; i++ ) {
-        if ( button === allListItems[i] ) {
+    
+
+
+    for ( let i = 0; i < allListItems.length; i++ ) {
+        if ( button.textContent === allListItems[i].textContent ) {
             allListItems[i].classList.add('show');
             match = button.textContent;
-            return match;
-        } else {
-            return null;
-        }
+        } 
     }
+    return match;
 }
 
 // listens for the onscreen keyboard to be clicked
 qwerty.addEventListener('click', (event) => {
     let button = event.target;
 
-    if ( event.target && event.target.className !== 'chosen') {
-        button.classList.add('chosen');
-        button = button.disabled;
+    if (button.tagName === 'BUTTON') {
+        button.disabled = true;
+        if ( event.target && event.target.className !== 'chosen') {
+            button.classList.add('chosen');
+        }
+
+        const letterFound = checkLetter(button);
+
+        
+
+
     }
+
 });
 
-const letterFound = checkLetter(button);
+
