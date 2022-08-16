@@ -84,20 +84,20 @@ function checkWin() {
     const liLetter = document.getElementsByClassName('letter');
     const liShow = document.getElementsByClassName('show');
     let startOverlay = document.getElementById('overlay');
-    let headline = document.getElementsByClassName('header');
+    let headline = document.querySelector('.title');
     // Unsure if the two lines below are necessary, so I commented them out for now
     // let winOverlay = document.querySelector('.win');
     // let loseOverlay = document.querySelector('.lose');
 
     if (liLetter.length === liShow.length) {
         startOverlay.classList.add('win');
-        headline.textContent = 'Congratulations! You won!';
+        headline.innerHTML = 'Congratulations! You won!';
         startOverlay.style.display = 'flex';
     } 
     
     else if (missedGuesses > 4) {
         startOverlay.classList.add('lose');
-        headline.textContent = 'Sorry! You lost!';
+        headline.innerHTML = 'Sorry! You lost!';
         startOverlay.style.display = 'flex';
     }
 }
