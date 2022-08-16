@@ -77,6 +77,7 @@ qwerty.addEventListener('click', (event) => {
             missedGuesses ++;
         }
     }
+    checkWin();
 });
 
 // check if the game has been won or lost
@@ -102,4 +103,4 @@ function checkWin() {
     }
 }
 
-checkWin();
+
