@@ -83,15 +83,21 @@ qwerty.addEventListener('click', (event) => {
 function checkWin() {
     const liLetter = document.getElementsByClassName('letter');
     const liShow = document.getElementsByClassName('show');
-    const winOverlay = document.querySelector('.win');
-    const loseOverlay = document.querySelector('.lose');
+    let startOverlay = document.getElementById('overlay')
+    // Unsure if the two lines (88 & 89) below are necessary
+    // let winOverlay = document.querySelector('.win');
+    // let loseOverlay = document.querySelector('.lose');
 
     if (liLetter.length === liShow.length) {
-        winOverlay.style.display = 'flex';
+        startOverlay.classList.add('win');
+        startOverlay.textContent = 'Congratulations! You won!';
+        startOverlay.style.display = 'flex';
     } 
     
     else if (missedGuesses > 4) {
-        loseOverlay.style.display = 'flex';
+        startOverlay.classList.add('lose');
+        startOverlay.textContent = 'Sorry! You lost!';
+        startOverlay.style.display = 'flex';
     }
 }
 
