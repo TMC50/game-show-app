@@ -84,7 +84,7 @@ function checkWin() {
     const liLetter = document.getElementsByClassName('letter');
     const liShow = document.getElementsByClassName('show');
     let startOverlay = document.getElementById('overlay');
-    let headline = document.querySelector('.header h2');
+    let headline = document.getElementsByClassName('header');
     // Unsure if the two lines below are necessary, so I commented them out for now
     // let winOverlay = document.querySelector('.win');
     // let loseOverlay = document.querySelector('.lose');
